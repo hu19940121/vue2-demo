@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <CeShi />
+    <!-- <CeShi /> -->
+    <CeShi2 />
   </div>
 </template>
 
 <script>
-import CeShi from './components/CeShi.vue'
+// import CeShi from './components/CeShi.vue'
+import CeShi2 from './components/CeShi2.vue'
 
 export default {
   name: 'App',
   components: {
-    CeShi
+    CeShi2
   }
 }
 </script>
