@@ -117,31 +117,21 @@ export default {
         selectedYydwName: "", // 选中的押运单位名称
         selectedYydwId: "", // 选中的押运单位id
         selectedYYYList: [], // 选中的押运员列表
-        yyyOptions: [
-          {
-            label: "押运员4",
-            value: "yyy4",
-          },
-          {
-            label: "押运员5",
-            value: "yyy5",
-          },
-          {
-            label: "押运员1",
-            value: "yyy1",
-          },
-        ], // 押运员选项列表
+        yyyOptions: [], // 押运员选项列表
       });
     },
     handleYydwChange(index) {
       const selectedYydw = this.yydwOptions.find(
         (yydw) => yydw.value === this.list[index].selectedYydwId
       );
-      this.$set(
-        this.list[index],
-        "yyyOptions",
-        selectedYydw ? selectedYydw.yyyOptions : []
-      );
+      this.list[index].yyyOptions = selectedYydw ? selectedYydw.yyyOptions : [];
+      this.list[index].selectedYydwName = selectedYydw.label || "";
+      // this.$set(
+      //   this.list[index],
+      //   "yyyOptions",
+      //   selectedYydw ? selectedYydw.yyyOptions : []
+      // );
+      // this.$set(this.list[index], "selectedYydwName", selectedYydw.label || "");
     },
 
     isYydwDisabled(value) {
